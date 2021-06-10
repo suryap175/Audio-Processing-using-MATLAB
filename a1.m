@@ -1,0 +1,16 @@
+clc;
+close all;
+clear all;
+f=0.0;
+n=6;
+k=2;
+a=firl(n,f,'high');
+b=firl(n,f,'low');
+[y,fs]=audioread('C:\Users\surps\OneDrive\Desktop\project-20200829T153303Z-001\project\WhatsApp.wav');
+o=filter(a,1,y);
+p=filter(b,1,o);
+fvtool(k,1);
+subplot(2,1,1);
+plot(y);
+subplot(2,1,2);
+plot(p);
